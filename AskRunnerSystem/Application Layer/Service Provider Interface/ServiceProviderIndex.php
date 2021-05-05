@@ -18,22 +18,22 @@
 		   <div class="row">
 		    	<legend><h1><strong><?php echo $_SESSION['SP_USERNAME'];?> Homepage</strong></h1></legend>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?views">
+			    	<a href="ServiceProviderProduct.php?views">
 		    			<legend><h1 ><strong>View your product</strong></h1></legend>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?Add">
+			    	<a href="ServiceProviderProduct.php?Add">
 			    		<legend><h1 ><strong>Add new Product</strong></h1></legend>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderAccount.php">
+			    	<a href="ServiceProviderAccount.php">
 			    		<legend><h1 ><strong><?php echo $_SESSION['SP_USERNAME'];?> Account</strong></h1></legend>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderIncome.php">
+			    	<a href="ServiceProviderIncome.php">
 			    		<legend><h1><strong><?php echo $_SESSION['SP_USERNAME'];?> Income</strong></h1></legend>
 			    	</a>
 			   
