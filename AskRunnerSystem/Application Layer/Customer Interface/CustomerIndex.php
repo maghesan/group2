@@ -26,7 +26,7 @@
         $addordergoods = $goods->addordergoods();
 
     }else if(isset($_POST['AddOrderFood'])){
-        
+
         $addorderfood = $food->addorderfood();
 
     }else if(isset($_POST['AddOrderMedical'])){
@@ -130,13 +130,17 @@
                 <input type="text" name="FD_NAME" value="<?php echo $row['FD_NAME']; ?>" hidden>
                 
                 <input type="text" name="FD_PRICE" value="<?php echo $row['FD_PRICE']; ?>" hidden>
-                <!--<input type="text" name="FD_PROID" value="<?php //echo $row['FD_PROID']; ?>" hidden> -->            
+<!--                <input type="text" name="FD_PROID" value="--><?php //echo $row['FD_PROID']; ?><!--" hidden> -->
                     <tr>
                         <td rowspan="13"><img style="width: 300px; " src="../IMG/<?php echo $row['FD_IMAGE'];?>" ></td>
                         <td><h2><?php echo $row['FD_NAME'];?></h2>
 
                         </td>
                     </tr>
+<!--                    <tr>-->
+<!--                        <td></td>-->
+<!--                        <td><h2>ID --><?php //echo $row['SP_ID'];?><!--</h2></td>-->
+<!--                    </tr>-->
                     <tr>
                         <td></td>
                         <td><h2>RM <?php echo $row['FD_PRICE'];?></h2></td>
@@ -372,7 +376,8 @@
                     foreach($details as $row) {
              ?>
                 <form action="" method="post">
-                <table style="font-size: 15px;"> 
+                <table style="font-size: 15px;">
+
                 <input type="text" name="CUST_ID" value="<?php echo $_SESSION['CUST_ID']; ?>" hidden>
                 <input type="text" name="CUST_NAME" value="<?php echo $_SESSION['CUST_NAME']; ?>" hidden>
                 <input type="text" name="CUST_ADDRESS" value="<?php echo $_SESSION['CUST_ADDRESS']; ?>" hidden>

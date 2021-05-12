@@ -98,6 +98,7 @@
 			$pet->ORDER_PROD_NAME = $_POST['PET_NAME'];
 			$pet->ORDER_PROD_PRICE = $_POST['PET_PRICE'];
 			$pet->ORDER_DATE = date("Y-m-d H:i:s");
+            $pet->deliveryStatus = ("Pending");
 	
 			
 			if($pet->addorderpet()){
@@ -106,6 +107,18 @@
 				echo "<script type='text/javascript'>alert('$message'); window.location = 'CustomerOrder.php';</script>";
 			}
 		}
+
+        function dstatuspet(){
+            $pet = new pet();
+
+            $pet->ORDER_ID = $_POST['ORDER_ID'];
+            $pet->SP_ID = $_SESSION['SP_ID'];
+            if($pet->dstatuspet()){
+
+                $message = "Your order is accepted";
+                echo "<script type='text/javascript'>alert('$message')";
+            }
+        }
 
 //end pet part
 //goods part
@@ -166,7 +179,7 @@
 			$goods = new goods();
 			$goods->GD_PROID = $GD_PROID;
 			if($goods->deletegoods()){
-
+                $message = "Delete Successfuly";
 				echo "<script type='text/javascript'>alert('$message'); window.location = 'ServiceProviderProduct.php?views';</script>";
 			}
 		}
@@ -198,6 +211,7 @@
 			$goods->ORDER_PROD_NAME = $_POST['GD_NAME'];
 			$goods->ORDER_PROD_PRICE = $_POST['GD_PRICE'];
 			$goods->ORDER_DATE = date("Y-m-d H:i:s");
+            $goods->deliveryStatus = ("Pending");
 	
 			
 			if($goods->addordergoods()){
@@ -206,12 +220,24 @@
 				echo "<script type='text/javascript'>alert('$message'); window.location = 'CustomerOrder.php';</script>";
 			}
 		}
+    function dstatusgoods(){
+        $goods = new goods();
+
+        $goods->ORDER_ID = $_POST['ORDER_ID'];
+        $goods->SP_ID = $_SESSION['SP_ID'];
+        if($goods->dstatusgoods()){
+
+            $message = "Your order is accepted";
+            echo "<script type='text/javascript'>alert('$message')";
+        }
+    }
+
 
 //end goods part
 //food part
 		function addfood(){
 			$food = new food();
-			$food->SP_ID = $_POST['SP_ID'];
+//			$food->SP_ID = $_POST['SP_ID'];
 			$food->FD_NAME = $_POST['FD_NAME'];
 			$food->FD_TYPE = $_POST['FD_TYPE'];
 			$food->FD_PRICE = $_POST['FD_PRICE'];
@@ -294,6 +320,7 @@
 
 		function addorderfood(){
 			$food = new food();
+
 			$food->CUST_ID = $_SESSION['CUST_ID'];
 			$food->ORDER_TYPE = "FOOD";
 			$food->ORDER_NAME = $_POST['CUST_NAME'];
@@ -303,6 +330,8 @@
 			$food->ORDER_PROD_NAME = $_POST['FD_NAME'];
 			$food->ORDER_PROD_PRICE = $_POST['FD_PRICE'];
 			$food->ORDER_DATE = date("Y-m-d H:i:s");
+            $food->deliveryStatus = ("Pending");
+//            $food->SP_ID = $_POST['SP_ID'];
 	
 			
 			if($food->addorderfood()){
@@ -311,6 +340,22 @@
 				echo "<script type='text/javascript'>alert('$message'); window.location = 'CustomerOrder.php';</script>";
 			}
 		}
+
+		function dstatusfood(){
+
+            $food = new food();
+            $food->ORDER_ID = $_POST['ORDER_ID'];
+            $food->SP_ID = $_SESSION['SP_ID'];
+//            $food->ORDER_ID = $_POST['ORDER_ID'];
+
+
+            if($food->dstatusfood()){
+
+                $message = "Your order is accepted";
+
+                echo "<script type='text/javascript'>alert('$message') ; window.location='ServiceProviderIncomingOrder.php';</script>";
+            }
+        }
 //end food part
 //medical part
 		function addmedical(){
@@ -412,6 +457,7 @@
 			$medical->ORDER_PROD_NAME = $_POST['MD_NAME'];
 			$medical->ORDER_PROD_PRICE = $_POST['MD_PRICE'];
 			$medical->ORDER_DATE = date("Y-m-d H:i:s");
+            $medical->deliveryStatus = ("Pending");
 	
 			
 			if($medical->addordermedical()){
@@ -420,6 +466,17 @@
 				echo "<script type='text/javascript'>alert('$message'); window.location = 'CustomerOrder.php';</script>";
 			}
 		}
+		function dstatusmedical(){
+            $medical = new medical();
+            $medical->ORDER_ID = $_POST['ORDER_ID'];
+            $medical->SP_ID = $_SESSION['SP_ID'];
+
+            if($medical->dstatusmedical()){
+
+                $message = "Order accepted";
+                echo "<script type='text/javascript'>alert('$message')";
+            }
+        }
 
 	}
 

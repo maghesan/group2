@@ -387,7 +387,7 @@
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
 				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderAccount.php"><h3>My Account</h3></a></li>
-				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderProduct.php"><h3>Order List</h3></a></li>
+				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderIncomingOrder.php"><h3>Order List</h3></a></li>
 				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderIncome.php"><h3>My Income</h3></a></li>
 				          <li class="partnerbox2"><a href="../View Interface/Logout.php"><h3>Log Out</h3></a></li>
 				        </ul>

@@ -151,10 +151,11 @@
 			    		<img src="../IMG/petassist.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 			    		<button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
-			   
+
 			  </div>
 
 			</div>
+
 			<?php
 //view and update food product 
 				}

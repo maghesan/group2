@@ -25,6 +25,7 @@
 			$serviceprovider->SP_USERNAME = $SP_USERNAME;
 			return $serviceprovider->splogin();
 		}
+
 		function logout(){
 			session_start();
 			session_destroy();
@@ -64,15 +65,23 @@
 		}
 		function spallincome(){
 			$serviceprovider = new spaccount();
+            $serviceprovider->SP_ID = $_POST['SP_ID'];
 			return $serviceprovider-> spallincomedata();
 		}
+
+        function spincomingorder($SP_ID){
+            $serviceprovider = new spaccount();
+            $serviceprovider->SP_ID = $SP_ID;
+            return $serviceprovider-> spincomingorderdata();
+        }
+
 		function spverify(){
 			$serviceprovider = new spaccount();
 			$serviceprovider->SP_ID = $_POST['SP_ID'];
 			$serviceprovider->SP_VERIFY = $_POST['SP_VERIFY'];
 			if($serviceprovider->spverify()){
 				$message = "Verified Successfuly";
-				echo "<script type='text/javascript'>alert('$message'); window.location = '../Admin Interface/UserAccount.php?user=serviceprovider';</script>";
+				echo "<script type='text/javascript'>alert('$message')";
 			}
 		}
 	}
