@@ -43,7 +43,7 @@
                   ."<td>".$row['ORDER_ADD']."</td>"
                   ."<td>".$row['ORDER_PHONE_NO']."</td>"
                   ."<td>".$row['ORDER_DATE']."</td>"
-                  ."<td>".$row['ORDER_PROD_PRICE']."</td>"
+                  ."<td>".$row['ORDER_FINAL_PRICE']."</td>"
                   ."<td>".$row['deliveryStatus']."</td>";
 
                 $i++;

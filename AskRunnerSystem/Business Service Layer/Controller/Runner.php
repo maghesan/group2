@@ -90,7 +90,7 @@
 			$runner =  new runneraccount();
 			$runner->ORDER_ID = $_POST['ORDER_ID'];
 			$runner->RUN_ID = $_POST['RUN_ID'];
-			$runner->deliveryStatus = "Delivering";
+			$runner->deliveryStatus = $_POST['deliveryStatus'];
 			if ($runner-> updateStatus()) {
 	    		# code...
 	    		$message = "Jobs accept Successfuly";
@@ -102,13 +102,13 @@
 
 			$runner =  new runneraccount();
 			$runner->ORDER_ID = $_POST['ORDER_ID'];
-			$runner->deliveryStatus = "Completed";
+			$runner->deliveryStatus = $_POST['deliveryStatus'];
 			$runner->runincome = $_POST['runincome'];
 			$runner->spincome = $_POST['spincome'];
 			if ($runner-> deliveredStatus()) {
 	    		# code...
 	    		$message = "Jobs Delivered Successfuly";
-				echo "<script type='text/javascript'>alert('$message'); window.location = '../Runner Interface/RunnerDeliveryJobs.php?jobs1';</script>";
+				echo "<script type='text/javascript'>alert('$message'); window.location = '../Runner Interface/RunnerDeliveryJobs.php?jobs2';</script>";
 	    	}
 		}
 		function runverify(){

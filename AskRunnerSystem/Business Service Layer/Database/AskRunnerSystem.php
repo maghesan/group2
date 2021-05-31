@@ -107,7 +107,7 @@ class customeraccount{
 
 	function custOrderhistory()
 	{
-		$sql = "select * from ordertable where CUST_ID=:CUST_ID && deliveryStatus = 'Completed'";
+		$sql = "select * from ordertable where CUST_ID=:CUST_ID && deliveryStatus = 'complete'";
 		$args = [':CUST_ID' => $this->CUST_ID];
 		$send = customeraccount::connect()->prepare($sql);
 		$send->execute($args);
@@ -216,14 +216,13 @@ class runneraccount{
 
 	}
 	function allorder(){
-		$sql = "select * from ordertable where deliveryStatus='Ready' ";
-		$send = runneraccount::connect()->prepare($sql);
-		$send->execute();
-		return $send;
+		$sql = "select * from ordertable where deliveryStatus='waiting for runner' ";
+		return runneraccount::connect()->query($sql);
+
 	}
 
 	function allaccept(){
-		$sql = "select * from ordertable where RUN_ID=:RUN_ID and deliveryStatus='Delivering'";
+		$sql = "select * from ordertable where RUN_ID=:RUN_ID and deliveryStatus='pending'";
 		$args = [':RUN_ID' => $this->RUN_ID];
 		$send = runneraccount::connect()->prepare($sql);
 		$send->execute($args);
@@ -263,15 +262,13 @@ class runneraccount{
 		return $send;
 	}
 	function history(){
-		$sql = "select * from ordertable where RUN_ID=:RUN_ID and deliveryStatus='Completed'";
+		$sql = "select * from ordertable where RUN_ID=:RUN_ID and deliveryStatus='Delivered'";
 		$args = [':RUN_ID' => $this->RUN_ID];
 		$send = runneraccount::connect()->prepare($sql);
 		$send->execute($args);
 		return $send;
 
 	}
-
-
 }
 
 //for sp account database connect to sp table
@@ -317,21 +314,12 @@ class spaccount{
 		$send->execute($args);
 		return $send;
 	}
-	function spincomedata()
-	{
+	function spincomedata(){
 		$sql = "select * from spincome where SP_ID=:SP_ID order by SP_INDATE";
 		$args = [':SP_ID' => $this->SP_ID];
 		$send = spaccount::connect()->prepare($sql);
 		$send->execute($args);
 		return $send;
-	}
-		function spincomingorderdata(){
-			$sql = "select * from ordertable where SP_ID=:SP_ID && deliveryStatus = 'Pending'";
-			$args = [':SP_ID' => $this->SP_ID];
-			$send = spaccount::connect()->prepare($sql);
-			$send->execute($args);
-			return $send;
-
 	}
 	function spallincomedata(){
 		$sql = "select * from spincome order by SP_INDATE";
@@ -400,19 +388,10 @@ class pet{
 		return $petsend;
 	}
 	function addorderpet(){
-		$petsql = "insert into ordertable(CUST_ID, ORDER_PRO_ID, ORDER_TYPE, ORDER_ADD, ORDER_NAME, ORDER_PHONE_NO, ORDER_DATE, ORDER_PROD_NAME , ORDER_PROD_PRICE, deliveryStatus) values (:CUST_ID, :ORDER_PRO_ID,  :ORDER_TYPE, :ORDER_ADD, :ORDER_NAME, :ORDER_PHONE_NO, :ORDER_DATE, :ORDER_PROD_NAME, :ORDER_PROD_PRICE, :deliveryStatus)";
-		$petargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE, ':deliveryStatus'=>$this->deliveryStatus];
+		$petsql = "insert into ordertable(CUST_ID, ORDER_PRO_ID, ORDER_TYPE, ORDER_ADD, ORDER_NAME, ORDER_PHONE_NO, ORDER_DATE, ORDER_PROD_NAME , ORDER_PROD_PRICE) values (:CUST_ID, :ORDER_PRO_ID,  :ORDER_TYPE, :ORDER_ADD, :ORDER_NAME, :ORDER_PHONE_NO, :ORDER_DATE, :ORDER_PROD_NAME, :ORDER_PROD_PRICE)";
+		$petargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE];
 		$petsend = food::connect()->prepare($petsql);
 		$petsend->execute($petargs);
-		$updatepetsql = "UPDATE ordertable SET SP_ID = ( SELECT SP_ID FROM petproduct WHERE ordertable.ORDER_PROD_NAME = petproduct.PET_NAME ORDER BY ORDER_ID DESC LIMIT 1 )";
-		return pet::connect()->query($updatepetsql);
-	}
-	function dstatuspet(){
-		$dpet = "UPDATE ordertable SET deliveryStatus='Ready' WHERE ORDER_ID=:ORDER_ID ";
-		$dpetargs = [':ORDER_ID'=>$this->ORDER_ID ];
-		$dpetsend = pet::connect()->prepare($dpet);
-		$dpetsend->execute($dpetargs);
-		return $dpet;
 	}
 }
 	
@@ -468,20 +447,10 @@ class goods{
 		return $gdsend;
 	}
 	function addordergoods(){
-		$goodssql = "insert into ordertable(CUST_ID, ORDER_PRO_ID, ORDER_TYPE, ORDER_ADD, ORDER_NAME, ORDER_PHONE_NO, ORDER_DATE, ORDER_PROD_NAME , ORDER_PROD_PRICE, deliveryStatus) values (:CUST_ID, :ORDER_PRO_ID,  :ORDER_TYPE, :ORDER_ADD, :ORDER_NAME, :ORDER_PHONE_NO, :ORDER_DATE, :ORDER_PROD_NAME, :ORDER_PROD_PRICE, :deliveryStatus)";
-		$goodsargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE, ':deliveryStatus'=>$this->deliveryStatus];
+		$goodssql = "insert into ordertable(CUST_ID, ORDER_PRO_ID, ORDER_TYPE, ORDER_ADD, ORDER_NAME, ORDER_PHONE_NO, ORDER_DATE, ORDER_PROD_NAME , ORDER_PROD_PRICE) values (:CUST_ID, :ORDER_PRO_ID,  :ORDER_TYPE, :ORDER_ADD, :ORDER_NAME, :ORDER_PHONE_NO, :ORDER_DATE, :ORDER_PROD_NAME, :ORDER_PROD_PRICE)";
+		$goodsargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE];
 		$goodssend = food::connect()->prepare($goodssql);
 		$goodssend->execute($goodsargs);
-		$updategoodsql = "UPDATE ordertable SET SP_ID = ( SELECT SP_ID FROM goodproduct WHERE ordertable.ORDER_PROD_NAME = goodproduct.GD_NAME ORDER BY ORDER_ID DESC LIMIT 1 )";
-		return goods::connect()->query($updategoodsql);
-	}
-
-	function dstatusgoods(){
-		$dgood = "UPDATE ordertable SET deliveryStatus='Ready' WHERE ORDER_ID=:ORDER_ID ";
-		$dgoodargs = [':ORDER_ID'=>$this->ORDER_ID ];
-		$dgoodsend = good::connect()->prepare($dgood);
-		$dgoodsend->execute($dgoodargs);
-		return $dgood;
 	}
 
 	function addorder2history(){
@@ -489,13 +458,12 @@ class goods{
 		$hoodsargs = [':CUST_ID'=>$this->CUST_ID , ':cname'=>$this->cname , ':fname'=>$this->fname , ':price'=>$this->price  , ':address'=>$this->address  ,'5'=>$this->id];
 		$hoodssend = food::connect()->prepare($hoodssql);
 		$hoodssend->execute($hoodsargs);
-
 	}
 	
 }
 //food 
 class food{
-	public $ORDER_ID, $SP_ID, $FD_NAME, $FD_TYPE, $FD_BRAND, $FD_PRICE, $FD_STOCK, $FD_EXPIRY_DATE, $FD_CERTIFICATIONS, $FD_SHIP_FEE, $FD_ORIGIN , $FD_SHIPS_FROM, $FD_IMAGE, $FD_PUBLISH, $FD_DESCRIPTIONS,$CUST_ID, $deliveryStatus;
+	public $SP_ID, $FD_NAME, $FD_TYPE, $FD_BRAND, $FD_PRICE, $FD_STOCK, $FD_EXPIRY_DATE, $FD_CERTIFICATIONS, $FD_SHIP_FEE, $FD_ORIGIN , $FD_SHIPS_FROM, $FD_IMAGE, $FD_PUBLISH, $FD_DESCRIPTIONS,$CUST_ID;
 
 	function connect(){
 		$con = new PDO('mysql:host=localhost;dbname=askrunnersystem','root','');
@@ -546,22 +514,10 @@ class food{
 		return $foodsend;
 	}
 	function addorderfood(){
-		$foodsql = "insert into ordertable(CUST_ID, ORDER_PRO_ID, ORDER_TYPE, ORDER_ADD, ORDER_NAME, ORDER_PHONE_NO, ORDER_DATE, ORDER_PROD_NAME , ORDER_PROD_PRICE , deliveryStatus, SP_ID) values (:CUST_ID, :ORDER_PRO_ID,  :ORDER_TYPE, :ORDER_ADD, :ORDER_NAME, :ORDER_PHONE_NO, :ORDER_DATE, :ORDER_PROD_NAME, :ORDER_PROD_PRICE, :deliveryStatus)";
-		$foodargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE, ':deliveryStatus'=>$this->deliveryStatus];
+		$foodsql = "insert into ordertable(CUST_ID, ORDER_PRO_ID, ORDER_TYPE, ORDER_ADD, ORDER_NAME, ORDER_PHONE_NO, ORDER_DATE, ORDER_PROD_NAME , ORDER_PROD_PRICE) values (:CUST_ID, :ORDER_PRO_ID,  :ORDER_TYPE, :ORDER_ADD, :ORDER_NAME, :ORDER_PHONE_NO, :ORDER_DATE, :ORDER_PROD_NAME, :ORDER_PROD_PRICE)";
+		$foodargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE];
 		$foodsend = food::connect()->prepare($foodsql);
 		$foodsend->execute($foodargs);
-
-		$updatefoodsql = "UPDATE ordertable SET SP_ID = ( SELECT SP_ID FROM foodproduct WHERE ordertable.ORDER_PROD_NAME = foodproduct.FD_NAME ORDER BY ORDER_ID DESC LIMIT 1 )";
-		return food::connect()->query($updatefoodsql);
-		return $foodsend;
-	}
-
-	function dstatusfood(){
-		$dfood = "UPDATE ordertable SET deliveryStatus='Ready' WHERE ORDER_ID=:ORDER_ID ";
-		$dfoodargs = [':ORDER_ID'=>$this->ORDER_ID];
-		$dfoodsend = food::connect()->prepare($dfood);
-		$dfoodsend->execute($dfoodargs);
-		return $dfood;
 	}
 
 	
@@ -621,23 +577,11 @@ class medical{
 	
 
 	function addordermedical(){
-		$medsql = "insert into ordertable(CUST_ID, ORDER_PRO_ID, ORDER_TYPE, ORDER_ADD, ORDER_NAME, ORDER_PHONE_NO, ORDER_DATE, ORDER_PROD_NAME , ORDER_PROD_PRICE,deliveryStatus) values (:CUST_ID, :ORDER_PRO_ID,  :ORDER_TYPE, :ORDER_ADD, :ORDER_NAME, :ORDER_PHONE_NO, :ORDER_DATE, :ORDER_PROD_NAME, :ORDER_PROD_PRICE, :deliveryStatus)";
-		$medargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE, ':deliveryStatus'=>$this->deliveryStatus];
+		$medsql = "insert into ordertable(CUST_ID, ORDER_PRO_ID, ORDER_TYPE, ORDER_ADD, ORDER_NAME, ORDER_PHONE_NO, ORDER_DATE, ORDER_PROD_NAME , ORDER_PROD_PRICE) values (:CUST_ID, :ORDER_PRO_ID,  :ORDER_TYPE, :ORDER_ADD, :ORDER_NAME, :ORDER_PHONE_NO, :ORDER_DATE, :ORDER_PROD_NAME, :ORDER_PROD_PRICE)";
+		$medargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE];
 		$medsend = food::connect()->prepare($medsql);
 		$medsend->execute($medargs);
-		$updatemedsql = "UPDATE ordertable SET SP_ID = ( SELECT SP_ID FROM medicalproduct WHERE ordertable.ORDER_PROD_NAME = medicalproduct.MD_NAME ORDER BY ORDER_ID DESC LIMIT 1)";
-		return medical::connect()->query($updatemedsql);
-		return $medsend;
 	}
-
-	function dstatusmedical(){
-		$dmed = "UPDATE ordertable SET deliveryStatus='Ready' WHERE ORDER_ID=:ORDER_ID ";
-		$dmedargs = [':ORDER_ID'=>$this->ORDER_ID ];
-		$dmedsend = medical::connect()->prepare($dmed);
-		$dmedsend->execute($dmedargs);
-		return $dmed;
-	}
-
 	
 }
 

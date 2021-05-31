@@ -112,51 +112,84 @@ if(isset($_GET['checkout'])){
 
     }
 }
-$data = $customer->orderhistory($custid);
+
 ?>
 
 <!--    utk content    -->
-<!--    utk content    -->
 <div class="container-fluid content mb-5">
     <div class="col-lg-12 py-4" align="center">
-        <legend><h1><?php echo $_SESSION['CUST_NAME'];?> Order History</h1></legend>
+        <div class="col-lg  form-style-10">
+            <fieldset>
+                <!--    view order details   -->
+                <?php
+                $custview = $customer->custview($custid);
+                foreach ($custview as $row) {
+                ?>
+                <legend><h1><?php echo $row['CUST_USERNAME'];?> Order History</h1></legend>
+                <br>
+                <form action="" method="POST">
+                    <table class="custdetails" style="font-size: 18px;">
+                        <input type="text" name="CUST_ID" value="<?php echo $row['CUST_ID']; ?>" hidden>
+                        <?php
+                        }
 
-        <table id="example" class="table table-striped table-sm" style="font-size: 20px;">
-            <thead>
-            <tr>
-                <th>No</th>
-                <th>Customer Name</th>
-                <th>Customer Address</th>
-                <th>Customer Phone Number</th>
-                <th>Order date</th>
-                <th>Order Price</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            $i =1;
-            foreach($data as $row){
-                echo "<tr>"
-                    ."<td>".$i."</td>"
-                    ."<td>".$row['ORDER_NAME']."</td>"
-                    ."<td>".$row['ORDER_ADD']."</td>"
-                    ."<td>".$row['ORDER_PHONE_NO']."</td>"
-                    ."<td>".$row['ORDER_DATE']."</td>"
-                    ."<td>".$row['ORDER_PROD_PRICE']."</td>"
-                    ."<td>".$row['deliveryStatus']."</td>";
+                        $orderhistory = $customer->orderhistory($custid);
+                        foreach ($orderhistory as $row) {
+                            $ORDER_NAME=$row['ORDER_PROD_NAME'];
+                            $ORDER_ADD=$row['ORDER_ADD'];
 
-                $i++;
-                echo "</tr>";
-            }
+                        }
+                        ?>
 
-            ?>
-            </tbody>
-        </table>
 
-    </div>
+                    </table>
+                    <br>
+                    <table class="orderdetails" style="font-size: 18px; " >
 
-</div>
+
+                        <input type="text" name="ORDER_PROD_PRICE" value="<?php echo $row['ORDER_PROD_PRICE']; ?>" hidden>
+                        <tr>
+                            <th>Order ID.</th>
+                            <th>Order Date.</th>
+                            <th>   Product</th>
+
+                            <th>Price</th>
+                            <th>Delivery Address</th>
+                            <th>Delivery Status</th>
+
+                        </tr>
+                        <?php
+                        //}
+                        $i=1;
+
+                        $ORDER_TOTAL_PRICE=0;
+                        $orderhistory = $customer->orderhistory($custid);
+                        foreach ($orderhistory as $row) {
+
+
+                            ?>
+                            <tr>
+                                <td><center><?php echo $row['ORDER_ID']; ?></center></td>
+                                <td><center><?php echo $row['ORDER_DATE']; ?></center></td>
+                                <td><center><?php echo $row['ORDER_PROD_NAME']; ?></center></td>
+
+                                <td><center>RM <?php echo $row['ORDER_PROD_PRICE']; ?></center></td>
+                                <td><center> <?php echo $row['ORDER_ADD']; ?></center></td>
+                                <td><center> <?php echo $row['deliveryStatus']; ?></center></td>
+                                <td>
+
+                                </td>
+                            </tr>
+                            <?php
+
+
+                            $i++;
+                        }
+                        ?>
+
+                    </table>
+
+                </form>
                 <!--    end view order details   -->
             </fieldset>
         </div>
