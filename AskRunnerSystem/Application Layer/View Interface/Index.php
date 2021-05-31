@@ -145,28 +145,28 @@
 			    <div class="col kotakkedai text-center py-4 m-4">
 			    	<a href="">
 		    			<legend><h1>Food Section</h1></legend>
-			    		<img src="../IMG/food.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/food.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    <button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
 			    	<a href="">
 			    		<legend><h1>Goods Section</h1></legend>
-				    	<img src="../IMG/goods.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+				    	<img src="../IMG/goods.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    	<button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
 			    	<a href="">
 			    		<legend><h1>Medical Section</h1></legend>
-			    		<img src="../IMG/medical.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/medical.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    <button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
 			    	<a href="">
 			    		<legend><h1>Pet Assist Section</h1></legend>
-			    		<img src="../IMG/petassist.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/petassist.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 			    		<button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			   

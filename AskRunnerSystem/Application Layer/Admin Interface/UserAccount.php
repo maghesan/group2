@@ -32,7 +32,7 @@
         	?>
         		<div class="row ">
 	        		<div class="col-lg " >
-		        		<a href="UserAccount.php?user=customer"><legend><h1><strong>Customer Account</strong></h1></legend></a>
+		        		<a href="../Admin Interface/UserAccount.php?user=customer"><legend><h1><strong>Customer Account</strong></h1></legend></a>
 			        		<form action="" method="POST">
 							<table class="table " style="font-size: 20px;">
 								
@@ -129,7 +129,7 @@
         	?>
         		<div class="row ">
 	        		<div class="col-lg " >
-		        		<a href="UserAccount.php?user=customer"><legend><h1><strong>Service Provider Account</strong></h1></legend></a>
+		        		<a href="../Admin Interface/UserAccount.php?user=customer"><legend><h1><strong>Service Provider Account</strong></h1></legend></a>
 			        		<form action="" method="POST">
 							<table class="table " style="font-size: 20px;">
 								
@@ -249,7 +249,7 @@
 	        	?>
 	        		<div class="row ">
 	        		<div class="col-lg " >
-		        		<a href="UserAccount.php?user=customer"><legend><h1><strong>Runner Account</strong></h1></legend></a>
+		        		<a href="../Admin Interface/UserAccount.php?user=customer"><legend><h1><strong>Runner Account</strong></h1></legend></a>
 			        		<form action="" method="POST">
 							<table class="table " style="font-size: 20px;">
 								
@@ -376,13 +376,13 @@
         	?>
         	<div class="row ">
         		<div class="col-lg " >
-	        		<a href="UserAccount.php?user=customer"><legend><h1><strong>Customer Account</strong></h1></legend></a>
+	        		<a href="../Admin Interface/UserAccount.php?user=customer"><legend><h1><strong>Customer Account</strong></h1></legend></a>
 	        	</div>
 	        	<div class="col-lg ">
-	        		<a href="UserAccount.php?user=serviceprovider"><legend><h1><strong>Service Provider Account</strong></h1></legend></a>
+	        		<a href="../Admin Interface/UserAccount.php?user=serviceprovider"><legend><h1><strong>Service Provider Account</strong></h1></legend></a>
 	        	</div>
 	        	<div class="col-lg ">
-	        		<a href="UserAccount.php?user=runner"><legend><h1><strong>Runner Account</strong></h1></legend></a>
+	        		<a href="../Admin Interface/UserAccount.php?user=runner"><legend><h1><strong>Runner Account</strong></h1></legend></a>
 	        	</div>
         	</div>
         	<?php			

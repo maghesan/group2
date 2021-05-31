@@ -107,9 +107,8 @@ input[type=number]{
         $term = $_GET['checkout'];
         $orderid = $_GET['orderid'];
         if ($term == "checkout"){
-
+            
             $checkoutOrder = $customer->checkoutOrder($orderid);
-            $addorder2history = $customer->addorder2history($orderid);
 
         }
     }

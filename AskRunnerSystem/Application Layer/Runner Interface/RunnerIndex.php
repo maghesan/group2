@@ -16,20 +16,20 @@
 		<div class="col-lg-12 py-4" align="center">
             <div class="row ">
         		<div class="col-lg " >
-	        		<a href="RunnerDeliveryJobs.php?jobs1"><legend><h1><strong>Add Service</strong></h1></legend></a>
+	        		<a href="../Runner Interface/RunnerDeliveryJobs.php?jobs1"><legend><h1><strong>Add Service</strong></h1></legend></a>
 	        	</div>
 	        	<div class="col-lg ">
-	        		<a href="RunnerDeliveryJobs.php?jobs2"><legend><h1><strong>My Service</strong></h1></legend></a>
+	        		<a href="../Runner Interface/RunnerDeliveryJobs.php?jobs2"><legend><h1><strong>My Service</strong></h1></legend></a>
 	        	</div>
 	        	
 	        	<div class="col-lg " >
-	        		<a href="RunnerAccount.php"><legend><h1><strong>My Account</strong></h1></legend></a>
+	        		<a href="../Runner Interface/RunnerAccount.php"><legend><h1><strong>My Account</strong></h1></legend></a>
 	        	</div>
 	        	<div class="col-lg " >
-	        		<a href="RunnerDeliveryHistory.php"><legend><h1><strong>My History</strong></h1></legend></a>
+	        		<a href="../Runner Interface/RunnerDeliveryHistory.php"><legend><h1><strong>My History</strong></h1></legend></a>
 	        	</div>
 	        	<div class="col-lg ">
-	        		<a href="RunnerIncome.php"><legend><h1><strong>My Income Report</strong></h1></legend></a>
+	        		<a href="../Runner Interface/RunnerIncome.php"><legend><h1><strong>My Income Report</strong></h1></legend></a>
 	        	</div>
         	</div>
 

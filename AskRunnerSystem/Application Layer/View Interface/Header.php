@@ -228,28 +228,28 @@
 
 	  			if ($actor =='Customer'){
 			?>
-			<a href="../Customer%20Interface/CustomerIndex.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
+			<a href="../Customer Interface/CustomerIndex.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
 			<?php
 				}else if ($actor == 'Runner'){
 
 			?>
-			<a href="../Runner%20Interface/RunnerIndex.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
+			<a href="../Runner Interface/RunnerIndex.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
 			<?php
 				}else if ($actor == 'ServiceProvider'){
 
 			?>
-			<a href="../Service%20Provider%20Interface/ServiceProviderIndex.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
+			<a href="../Service Provider Interface/ServiceProviderIndex.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
 			<?php
 				}else if ($actor == 'Admin'){
 
 			?>
-			<a href="../Admin%20Interface/AdminIndex.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
+			<a href="../Admin Interface/AdminIndex.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
 			<?php
 				}
 			}else{
 
 			?>
-			<a href="Index.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
+			<a href="../View Interface/Index.php"><h2 class="display-4" style="margin-top: 10px;"> ASKRUNNER</h2></a>
 			<?php
 				}
 			?>
@@ -287,10 +287,10 @@
 				<ul class="nav navbar-nav ">
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
-				          <li class="partnerbox2"><a href="../Customer%20Interface/CustomerIndex.php?food"><h3>Food Product</h3></a></li>
-				          <li class="partnerbox2"><a href="../Customer%20Interface/CustomerIndex.php?goods"><h3>Goods Product</h3></a></li>
-				          <li class="partnerbox2"><a href="../Customer%20Interface/CustomerIndex.php?medical"><h3>Medical Product</h3></a></li>
-				          <li class="partnerbox2"><a href="../Customer%20Interface/CustomerIndex.php?pet"><h3>Pet Assist Product</h3></a></li>
+				          <li class="partnerbox2"><a href="../Customer Interface/CustomerIndex.php?food"><h3>Food Product</h3></a></li>
+				          <li class="partnerbox2"><a href="../Customer Interface/CustomerIndex.php?goods"><h3>Goods Product</h3></a></li>
+				          <li class="partnerbox2"><a href="../Customer Interface/CustomerIndex.php?medical"><h3>Medical Product</h3></a></li>
+				          <li class="partnerbox2"><a href="../Customer Interface/CustomerIndex.php?pet"><h3>Pet Assist Product</h3></a></li>
 				          <!-- <li class="partnerbox2"><a href="../Service Provider Interface/ServiceProviderProduct.php?Add"><h3></h3></a></li> -->
 				          <!-- <li class="partnerbox2"><a href="admincustomer.php"><h3>Customer</h3></a></li> -->
 				        </ul>
@@ -305,9 +305,9 @@
 				<ul class="nav navbar-nav ">
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
-				          <li class="partnerbox2"><a href="../Customer%20Interface/CustomerAccount.php"><h3>My Account</h3></a></li>
-				          <li class="partnerbox2"><a href="../Customer%20Interface/CustomerOrder.php"><h3>Order Details</h3></a></li>
-				          <li class="partnerbox2"><a href="../Customer Interface/ShopHistory.php"><h3>Order History</h3></a></li>
+				          <li class="partnerbox2"><a href="../Customer Interface/CustomerAccount.php"><h3>My Account</h3></a></li>
+				          <li class="partnerbox2"><a href="../Customer Interface/CustomerOrder.php"><h3>Order Details</h3></a></li>
+				          <!-- <li class="partnerbox2"><a href="../Customer Interface/ShopHistory.php"><h3>Order History</h3></a></li> -->
 				          <li class="partnerbox2"><a href="../View Interface/Logout.php"><h3>Log Out</h3></a></li>
 				        </ul>
 			   		</li>
@@ -330,8 +330,8 @@
 				<ul class="nav navbar-nav ">
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
-				          <li class="partnerbox2"><a href="../Runner%20Interface/RunnerDeliveryJobs.php?jobs1"><h3>Add Service</h3></a></li>
-				          <li class="partnerbox2"><a href="../Runner%20Interface/RunnerDeliveryJobs.php?jobs2"><h3>My Service</h3></a></li>
+				          <li class="partnerbox2"><a href="../Runner Interface/RunnerDeliveryJobs.php?jobs1"><h3>Add Service</h3></a></li>
+				          <li class="partnerbox2"><a href="../Runner Interface/RunnerDeliveryJobs.php?jobs2"><h3>My Service</h3></a></li>
 				        </ul>
 			   		</li>
 		   		</ul>
@@ -345,9 +345,9 @@
 				<ul class="nav navbar-nav ">
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
-				          <li class="partnerbox2"><a href="../Runner%20Interface/RunnerAccount.php"><h3>My Account</h3></a></li>
-				          <li class="partnerbox2"><a href="../Runner%20Interface/RunnerDeliveryHistory.php"><h3>My History</h3></a></li>
-				           <li class="partnerbox2"><a href="../Runner%20Interface/RunnerIncome.php"><h3>My Income Report</h3></a></li>
+				          <li class="partnerbox2"><a href="../Runner Interface/RunnerAccount.php"><h3>My Account</h3></a></li>
+				          <li class="partnerbox2"><a href="../Runner Interface/RunnerDeliveryHistory.php"><h3>My History</h3></a></li>
+				           <li class="partnerbox2"><a href="../Runner Interface/RunnerIncome.php"><h3>My Income Report</h3></a></li>
 				          <li class="partnerbox2"><a href="../View Interface/Logout.php"><h3>Log Out</h3></a></li>
 				        </ul>
 			   		</li>
@@ -369,8 +369,8 @@
 				<ul class="nav navbar-nav ">
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
-				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderProduct.php?views"><h3>View All Product</h3></a></li>
-				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderProduct.php?Add"><h3>Add New Product</h3></a></li>
+				          <li class="partnerbox2"><a href="../Service Provider Interface/ServiceProviderProduct.php?views"><h3>View All Product</h3></a></li>
+				          <li class="partnerbox2"><a href="../Service Provider Interface/ServiceProviderProduct.php?Add"><h3>Add New Product</h3></a></li>
 				          <!-- <li class="partnerbox2"><a href="admincustomer.php"><h3>Customer</h3></a></li> -->
 				        </ul>
 			   		</li>
@@ -386,9 +386,9 @@
 				<ul class="nav navbar-nav ">
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
-				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderAccount.php"><h3>My Account</h3></a></li>
-				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderProduct.php"><h3>Order List</h3></a></li>
-				          <li class="partnerbox2"><a href="../Service%20Provider%20Interface/ServiceProviderIncome.php"><h3>My Income</h3></a></li>
+				          <li class="partnerbox2"><a href="../Service Provider Interface/ServiceProviderAccount.php"><h3>My Account</h3></a></li>
+				          <li class="partnerbox2"><a href="../Service Provider Interface/ServiceProviderProduct.php"><h3>Order List</h3></a></li>
+				          <li class="partnerbox2"><a href="../Service Provider Interface/ServiceProviderIncome.php"><h3>My Income</h3></a></li>
 				          <li class="partnerbox2"><a href="../View Interface/Logout.php"><h3>Log Out</h3></a></li>
 				        </ul>
 			   		</li>
@@ -405,8 +405,8 @@
 				<ul class="nav navbar-nav ">
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
-				          <li class="partnerbox2"><a href="../Admin%20Interface/IncomePayment.php?runner"><h3>Runner</h3></a></li>
-				          <li class="partnerbox2"><a href="../Admin%20Interface/IncomePayment.php?serviceprovider"><h3>Service Provider</h3></a></li>
+				          <li class="partnerbox2"><a href="../Admin Interface/IncomePayment.php?runner"><h3>Runner</h3></a></li>
+				          <li class="partnerbox2"><a href="../Admin Interface/IncomePayment.php?serviceprovider"><h3>Service Provider</h3></a></li>
 				          <!-- <li class="partnerbox2"><a href="admincustomer.php"><h3>Customer</h3></a></li> -->
 				        </ul>
 			   		</li>
@@ -421,8 +421,8 @@
 				<ul class="nav navbar-nav ">
 					<li class="dropdown">
 						<ul class="dropdown-menu partnerbox">
-				          <li class="partnerbox2"><a href="../Admin%20Interface/UserAccount.php"><h3>User Account</h3></a></li>
-				          <li class="partnerbox2"><a href="../Admin%20Interface/AdminAccount.php"><h3>My Account</h3></a></li>
+				          <li class="partnerbox2"><a href="../Admin Interface/UserAccount.php"><h3>User Account</h3></a></li>
+				          <li class="partnerbox2"><a href="../Admin Interface/AdminAccount.php"><h3>My Account</h3></a></li>
 				          <li class="partnerbox2"><a href="../View Interface/Logout.php"><h3>Log Out</h3></a></li>
 				        </ul>
 			   		</li>

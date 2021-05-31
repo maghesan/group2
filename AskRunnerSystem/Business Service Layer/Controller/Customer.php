@@ -68,30 +68,9 @@
 			}*/
 
 			return $order-> checkoutdata();
-
+			header("Location:CustomerPayment.php");
 		
 		}
-
-        function addorder2history($ORDER_ID)
-        {
-            $order = new goods();
-            //$order->CUST_ID = $CUST_ID;
-            $order->ORDER_ID = $ORDER_ID;
-            //$order->CUST_ID = $_POST['CUST_ID'];
-            $order->ORDER_NAME = $_POST['ORDER_NAME'];
-            $order->ORDER_QUANTITY = $_POST['ORDER_QUANTITY'];
-            $order->ORDER_PROD_PRICE = $_POST['ORDER_PROD_PRICE'];
-            $order->ORDER_FINAL_PRICE = $_POST['ORDER_FINAL_PRICE'];
-            $order->ORDER_PROD_NAME = $_POST['ORDER_PROD_NAME'];
-            //$customer->CUST_EMAIL = $_POST['CUST_EMAIL'];
-            $order->ORDER_PHONE_NO = $_POST['ORDER_PHONE_NO'];
-            $order->ORDER_ADD = $_POST['ORDER_ADD'];
-
-            if($order->addorder2history()){
-                $message = "Update Successfuly";
-                header("Location:CustomerPayment.php");
-            }
-        }
 
 		function custeditOrder($ORDER_ID)
 		{
@@ -138,13 +117,6 @@
 			$order->CUST_ID = $CUST_ID;
 			return $order-> custOrderdata();
 		}
-
-        function orderhistory($CUST_ID)
-        {
-            $order = new customeraccount();
-            $order->CUST_ID = $CUST_ID;
-            return $order-> custOrderhistory();
-        }
 		function payment($custid, $fullname, $email, $amount){
 			$payment = new customeraccount();
 			
