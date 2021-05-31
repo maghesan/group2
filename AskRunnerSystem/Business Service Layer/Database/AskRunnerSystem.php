@@ -105,6 +105,15 @@ class customeraccount{
 		//return $send;
 	}
 
+	function custOrderhistory()
+	{
+		$sql = "select * from ordertable where CUST_ID=:CUST_ID && deliveryStatus = 'complete'";
+		$args = [':CUST_ID' => $this->CUST_ID];
+		$send = customeraccount::connect()->prepare($sql);
+		$send->execute($args);
+		return $send;
+	}
+
 	function deletecustOrder()
 	{
 		$sql = "delete from ordertable where ORDER_ID=:ORDER_ID";
@@ -442,6 +451,13 @@ class goods{
 		$goodsargs = [':CUST_ID'=>$this->CUST_ID , ':ORDER_PRO_ID'=>$this->ORDER_PRO_ID , ':ORDER_TYPE'=>$this->ORDER_TYPE , ':ORDER_ADD'=>$this->ORDER_ADD  , ':ORDER_PHONE_NO'=>$this->ORDER_PHONE_NO  ,':ORDER_NAME'=>$this->ORDER_NAME , ':ORDER_DATE'=>$this->ORDER_DATE , ':ORDER_PROD_NAME'=>$this->ORDER_PROD_NAME  , ':ORDER_PROD_PRICE'=>$this->ORDER_PROD_PRICE];
 		$goodssend = food::connect()->prepare($goodssql);
 		$goodssend->execute($goodsargs);
+	}
+
+	function addorder2history(){
+		$hoodssql = "insert into orderhistory(CUST_ID, cname, fname, price, address, id) values (:CUST_ID, :cname,  :price, :address, :id)";
+		$hoodsargs = [':CUST_ID'=>$this->CUST_ID , ':cname'=>$this->cname , ':fname'=>$this->fname , ':price'=>$this->price  , ':address'=>$this->address  ,'5'=>$this->id];
+		$hoodssend = food::connect()->prepare($hoodssql);
+		$hoodssend->execute($hoodsargs);
 	}
 	
 }

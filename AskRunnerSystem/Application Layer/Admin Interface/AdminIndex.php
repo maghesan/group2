@@ -13,13 +13,13 @@
         <div class="col-lg-12 py-4" align="center">
         	<div class="row ">
         		<div class="col-lg " >
-	        		<a href="../Admin Interface/IncomePayment.php?runner"><legend><h1><strong>Runner Payment</strong></h1></legend></a>
+	        		<a href="IncomePayment.php?runner"><legend><h1><strong>Runner Payment</strong></h1></legend></a>
 	        	</div>
 	        	<div class="col-lg ">
-	        		<a href="../Admin Interface/IncomePayment.php?serviceprovider"><legend><h1><strong>Service Provider Payment</strong></h1></legend></a>
+	        		<a href="IncomePayment.php?serviceprovider"><legend><h1><strong>Service Provider Payment</strong></h1></legend></a>
 	        	</div>
 	        	<div class="col-lg ">
-	        		<a href="../Admin Interface/UserAccount.php"><legend><h1><strong>All User Account</strong></h1></legend></a>
+	        		<a href="UserAccount.php"><legend><h1><strong>All User Account</strong></h1></legend></a>
 	        	</div>
         	</div>
         	

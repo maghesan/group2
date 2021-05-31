@@ -125,30 +125,30 @@
 		    <div class="row">
 		    	<legend><h1>Choose Product Type to view</h1></legend>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?view=food">
+			    	<a href="ServiceProviderProduct.php?view=food">
 		    			<legend><h1>Food Section</h1></legend>
-			    		<img src="../IMG/food.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/food.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    <button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?view=goods">
+			    	<a href="ServiceProviderProduct.php?view=goods">
 			    		<legend><h1>Goods Section</h1></legend>
-				    	<img src="../IMG/goods.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+				    	<img src="../IMG/goods.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    	<button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?view=medical">
+			    	<a href="ServiceProviderProduct.php?view=medical">
 			    		<legend><h1>Medical Section</h1></legend>
-			    		<img src="../IMG/medical.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/medical.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    <button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?view=pet">
+			    	<a href="ServiceProviderProduct.php?view=pet">
 			    		<legend><h1>Pet Assist Section</h1></legend>
-			    		<img src="../IMG/petassist.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/petassist.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 			    		<button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			   
@@ -170,7 +170,7 @@
 								<div class="col-lg-4 form-style-6 ml-5">
 								<fieldset>
 									<legend><h1><?php echo $row['FD_NAME'];?></h1></legend>
-									<form action="../Service Provider Interface/ServiceProviderProduct.php?view=food&proid=<?php echo $proid?>" method="POST">
+									<form action="ServiceProviderProduct.php?view=food&proid=<?php echo $proid?>" method="POST">
 										<table>
 							<input type="text" name="FD_PROID" value="<?php echo $row['FD_PROID'];?>" hidden>
 							<tr>
@@ -298,7 +298,7 @@
 								<div class="col-lg-4 form-style-6 ml-5">
 								<fieldset>
 									<legend><h1><?php echo $row['GD_NAME'];?></h1></legend>
-									<form action="../Service Provider Interface/ServiceProviderProduct.php?view=goods&proid=<?php echo $proid?>" method="POST">
+									<form action="ServiceProviderProduct.php?view=goods&proid=<?php echo $proid?>" method="POST">
 										<table>
 											<input type="text" name="GD_PROID" value="<?php echo $row['GD_PROID']; ?>" hidden>
 											<tr>
@@ -418,7 +418,7 @@
 								<div class="col-lg-4 form-style-6 ml-5">
 								<fieldset>
 									<legend><h1><?php echo $row['MD_NAME'];?></h1></legend>
-									<form action="../Service Provider Interface/ServiceProviderProduct.php?view=medical&proid=<?php echo $proid?>" method="POST">
+									<form action="ServiceProviderProduct.php?view=medical&proid=<?php echo $proid?>" method="POST">
 										<table>
 											<input type="text" name="MD_PROID" value="<?php echo $row['MD_PROID']; ?>" hidden>
 											<tr>
@@ -554,7 +554,7 @@
 								<div class="col-lg-4 form-style-6 ml-5">
 								<fieldset>
 									<legend><h1><?php echo $row['PET_NAME'];?></h1></legend>
-									<form action="../Service Provider Interface/ServiceProviderProduct.php?view=pet&proid=<?php echo $proid?>" method="POST">
+									<form action="ServiceProviderProduct.php?view=pet&proid=<?php echo $proid?>" method="POST">
 										<table>
 											<input type="text" name="PET_PROID" value="<?php echo $row['PET_PROID']; ?>" hidden>
 											<tr>
@@ -695,30 +695,30 @@
 		    <div class="row">
 		    	<legend><h1>Choose Product Type to add</h1></legend>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?Food">
+			    	<a href="ServiceProviderProduct.php?Food">
 		    			<legend><h1>Food Section</h1></legend>
-			    		<img src="../IMG/food.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/food.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    <button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?Goods">
+			    	<a href="ServiceProviderProduct.php?Goods">
 			    		<legend><h1>Goods Section</h1></legend>
-				    	<img src="../IMG/goods.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+				    	<img src="../IMG/goods.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    	<button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?Medical">
+			    	<a href="ServiceProviderProduct.php?Medical">
 			    		<legend><h1>Medical Section</h1></legend>
-			    		<img src="../IMG/medical.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/medical.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 				    <button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			    </div>
 			    <div class="col kotakkedai text-center py-4 m-4">
-			    	<a href="../Service Provider Interface/ServiceProviderProduct.php?Pet">
+			    	<a href="ServiceProviderProduct.php?Pet">
 			    		<legend><h1>Pet Assist Section</h1></legend>
-			    		<img src="../IMG/petassist.jpg"   style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
+			    		<img src="../IMG/petassist.jpg" style="width: 100%;height: 70%;margin-top: 10px;border-radius: 10px;">
 			    		<button class="btn btn-info button2 btn-block mt-2"><h4>View</h4></button>
 			    	</a>
 			   
